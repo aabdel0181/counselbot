@@ -1,28 +1,160 @@
 {"intents": [
-    {"tag": "greeting",
-     "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
-     "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
-     "context_set": ""
-    },
-    {"tag": "goodbye",
-     "patterns": ["Bye", "See you later", "Goodbye"],
-     "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
-    },
-    {"tag": "thanks",
-     "patterns": ["Thanks", "Thank you", "That's helpful"],
-     "responses": ["Happy to help!", "Any time!", "My pleasure"]
-    },
-    {"tag": "hours",
-     "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
-     "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
-    },
-    {"tag": "payments",
-     "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
-     "responses": ["We accept VISA, Mastercard and AMEX", "We accept most major credit cards"]
-    },
-    {"tag": "opentoday",
-     "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
-     "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
-    }
-]
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        
+        {"tag": "Suicide",
+        "patterns": ["I dont want to keep living like this","die","I want to die","kill myself","suicide","life is meaningless"],
+        "responses": ["Please believethat your life has meaning here is the suicide hotline 1-800-273-8255   "],
+        "context": [""]
+        },
+        {"tag": "College_fit",
+                "patterns": ["What college should I go to","What are my best college options","Where should I go after Highschool","college options","college fit","college"],
+                "responses": ["Im glad u are interested in college How good was your gpa?","were your grades good?"],
+                "context": ["grades_good","grades_bad"]
+        },
+        {"tag": "grades_good",
+                "patterns": ["My grades were good","I had a good GPA","yes","gpa was good"],
+                "responses": ["Its a good thing you focused on your studies u have great options because of that try using this link to find which college is best for you https://bigfuture.collegeboard.org/college-search"],
+                "context": [""]
+        },
+        {"tag": "grades_bad",
+                "patterns": ["My grades werent so good", "My grades were horrible","no","bad grades","I did not do so well in school"],
+                "responses": ["Its okay if ur grades werent good you still have options if ur interested in college try using this link to see where u would fit best in college https://bigfuture.collegeboard.org/college-search"],
+                "context": [""]
+        },
+        {"tag": "Home_Life",
+                "patterns": ["I dont feel safe at home","I dont want to come home today","my family sucks"],
+                "responses": ["Contact an administrator through their offices or the email list at HCPSS org website if not call 911 to get with the proper authorities."],
+                "context": [""]
+        },
+        {"tag": "Extracurriculars ",
+                "patterns": ["What should I do after school", "I am so bored once I get home what should I do","I want to join a club","I want to join a team","I need an afterschool activity", "what are some extracurriculars"],
+                "responses": ["We have a wide array of afterschool clubs and programs if your interested would u like to see a list or do u know which kind you'd like to join?"],
+                "context": ["Extracurriculars_list"]
+        },
+        {"tag": "Extracurriculars_List",
+                "patterns": ["Yes I would like to see the list thank you", "Can I see the list please?","show me the list","can I see the list", "yes"],
+                "responses": ["We have a number of options including NHS,FBLA,Football,Tennis,Track,BasketBall,Writing club which would u like to join? "],
+                "context": ["Extracurriculars_NHS","Extracurriculars_FBLA","Extracurriculars_Tennis","Extracurriculars_Football","Extracurriculars_Track","Extracurriculars_WritingClub"]
+        },
+        {"tag": "Extracurriculars_NHS",
+                "patterns": ["I would like to join the National Honor Society", "Can I join the NHS","NHS options","NHS","National Honor Society"],
+                "responses": ["You can get into contact with the president through their email example@gmail.com "],
+                "context": [""]
+        },
+        {"tag": "Extracurriculars_FBLA",
+                "patterns": ["I would like to join the Future Business Leaders of America", "Can I join FBLA","let me join fbla","fbla"],
+                "responses": ["You can get into contact with the president through their email example@gmail.com "],
+                "context": [""]
+        },
+        {"tag": "Extracurriculars_Tennis",
+                "patterns": ["I would like to join the tennis club", "Can I join the tennis team","tennis","tennis team","tennis club"],
+                "responses": ["I am glad u want to join the tennis club we can get u in contact with the president through their email example@gmail,com"],
+                "context": [""]
+        },
+        {"tag": "Extracurriculars_Football",
+                "patterns": ["I would like to join the football team", "Can I play Football","football","football team"],
+                "responses": ["The coach can be contacted at example@gmail.com"],
+                "context": [""]
+        },
+        {"tag": "Extracurriculars_Track",
+                "patterns": ["I would like to join the Track team", "Can I run track","track","track team"],
+                "responses": ["the coach can be contacted at example@gmail.com"],
+                "context": [""]
+        },
+        {"tag": "Schedule_Mistake",
+                "patterns": ["There is something wrong with my classes", "My schedule is wrong", "There was a mistake with my classes and scheduling", "schedule"],
+                "responses": ["You can email your counselor about fixing ur schedule at exmample@gmail.com"],
+                "context": [""]
+        },
+        {"tag": "classes",
+                "patterns": ["Can I take a different class then I have now", "I would like to change one of my classes","class change","change my classes"],
+                "responses": ["Can you let me know what classes you would like to exchange it for?"],
+                "context": ["class_Change"]
+        },
+        {"tag": "class_change",
+                "patterns": ["Can I have this class over this class", "I want to take this class rather than the one I have", "can I take bioogy"],
+                "responses": ["you can speak to a counselor about this change at their email at example@gmail.com"],
+                "context": [""]
+        },
+        {"tag": "Bullying",
+                "patterns": ["This person wont stop bothering me", "I have been getting picked on for a while now can u help","I have been getting bullied by this person","I know a bully","i am being bullied"],
+                "responses": ["you can email at counselor example@gmail.com or if it is serious u can call the police "],
+                "context": [""]
+        },
+        {"tag": "stress",
+                "patterns": ["School has been stressing me out recently", "I have been so stressed as of late","I am stressed"],
+                "responses": ["I am sorry to hear that you can request a class change if it is school oriented. Or, you can work on your time management skills and spend time relaxing or meditating"],
+                "context": ["classes"]
+        },
+        {"tag": "Description",
+                "patterns": [ "What are you?", "How does this work?"],
+                "responses": ["I am a chatbot created to improve the lives of students and counselors"],
+                "context": [""]
+        },
+        {"tag": "Help",
+                "patterns": [ "you are not working","help options","not working","help" ],
+                "responses": ["If something is not working correctly you can get in contact with a real administrator through the HCPSS system"],
+                "context": [""]
+        },
+        {"tag": "new",
+                "patterns": ["I am new here","I am a new student","I am a new kid","new to school", "I am a freshman"],
+                "responses": ["Hello and welcome to howard high school you are in for a world filled with wonderful learning and experiences if u have any questions about it feel free to ask"],
+                "context": [""]
+        },
+        {"tag": "jumpstart",
+                "patterns": ["What is jumpstart","how does jumpstart work","jumpstart","How do I apply for jumpstart"],
+                "responses": ["Jumpstart is a program for the growth of students in learning by going outside of this schools walls to learn u apply online to start taking classes at HCC and get a head start on your peers ask your counselor if you want to make the switch"],
+                "context": [""]
+         },
+         {"tag": "improve",
+                "patterns": ["What can I do to improve my grades","My grades arent so good this quarter","i want better grades","report card improvement"],
+                "responses": ["we have a number of ways for you to improve ur grades we have study hall an oppurtunity for you to work on assignments and meet with teachers we have after school help for math on tuesdays where u can seek help in math and many make up oppurtunities"],
+                "context": [""]
+        },
+        {"tag": "mental",
+                "patterns": ["school is just too much for me","I need help with my mental health","Mental health","help me with mental health"],
+                "responses": ["If you are struggling with your mental health call this number 1-800-273-TALK (8255). If you are stressed, say stressed, if you are depressed or face other issues, please be specific."],
+                "context": [""]
+        },
+        {"tag": "depressed",
+                "patterns": ["feeling depressed","depression","sad","I have been feeling really down"],
+                "responses": ["I'm sorry about that. It could be clinical, so I would reccomend talking to your physician. If it hasn't been persisting, try talking to a friend. You will be okay"],
+                "context": [""]
+        },
+        {"tag": "anxious",
+                "patterns": ["I am really anxious","I have anxiety","help me I'm really anxious"],
+                "responses": ["School does cause anxiety. Remeber to make sure you are sleeping well and take deep breaths. Please reach out to your physician"],
+                "context": [""]
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ]
 }
